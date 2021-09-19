@@ -1,0 +1,29 @@
+{
+  "contacts": [
+    {
+      "id": "1",
+      "name": "Dima",
+      "number": "123123123"
+    },
+    {
+      "id": "c955bb41-ce20-475c-9aa7-fca061a43978",
+      "name": "Sereja",
+      "number": "123132132132"
+    },
+    {
+      "id": "1321312",
+      "name": "Vlad",
+      "number": "123123123"
+    },
+    {
+      "id": "32144325",
+      "name": "Stas",
+      "number": "123123123"
+    },
+    {
+      "id": "da587ec3-d818-4ae3-9b4a-799936324e8d",
+      "name": "Paul",
+      "number": "1234321"
+    }
+  ]
+}

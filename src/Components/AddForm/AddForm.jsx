@@ -2,10 +2,12 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from '../../redux/actions';
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import styles from './AddForm.module.css';
 
 function AddForm() {
     const dispatch = useDispatch();
+
     const contacts = useSelector(state => state.contacts.items);
 
     const [name, setName] = useState('');
@@ -20,7 +22,7 @@ function AddForm() {
         e.preventDefault();
         if (checkEnteredName(name))
             return alert(`${name} is already in your contacts`);
-        dispatch(addContact(name, number));
+        dispatch(addContact({ id: uuidv4(), name, number }));
 
         setName('');
         setNumber('');
