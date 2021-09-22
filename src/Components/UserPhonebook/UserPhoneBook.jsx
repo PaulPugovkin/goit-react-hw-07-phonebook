@@ -4,19 +4,16 @@ import NewContact from '../NewContact';
 import styles from './UserPhoneBook.module.css';
 
 const UserPhoneBook = () => {
-    // const getUserContacts = (items, filter) => {
-    //     const normalizedFilter = filter.toLowerCase();
+    const getUserContacts = (items, filter) => {
+        const normalizedFilter = filter.toLowerCase();
 
-    //     return items.filter(({ name }) =>
-    //         name.toLowerCase().includes(normalizedFilter),
-    //     );
-    // };
+        return items.filter(({ name }) =>
+            name.toLowerCase().includes(normalizedFilter),
+        );
+    };
 
-    // const { items, filter } = useSelector(state => state.contacts);
-    // const contacts = getUserContacts(items, filter);
-
-    const { items } = useSelector(state => state.contacts);
-    const contacts = items;
+    const { items, filter } = useSelector(state => state.contacts);
+    const contacts = getUserContacts(items, filter);
 
     return (
         <div className={styles.wrapper}>

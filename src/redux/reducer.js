@@ -9,8 +9,9 @@ import {
 const items = createReducer([], {
     [getContacts.fulfilled]: (_, { payload }) => [...payload],
     [addContact.fulfilled]: (state, payload) => [...state, payload.meta.arg],
-    [deleteContact]: (state, { payload }) =>
-        state.filter(({ id }) => id !== payload),
+    [deleteContact.fulfilled]: (state, payload) => [
+        ...state.filter(({ id }) => id !== payload.meta.arg),
+    ],
 });
 
 const filter = createReducer('', {
