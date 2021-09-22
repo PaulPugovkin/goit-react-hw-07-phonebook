@@ -18,7 +18,30 @@ const filter = createReducer('', {
     [changeFilter]: (_, { payload }) => payload,
 });
 
+const isLoading = createReducer(false, {
+    [getContacts.pending]: () => true,
+    [getContacts.fulfilled]: () => false,
+    [getContacts.rejected]: () => false,
+    [addContact.pending]: () => true,
+    [addContact.fulfilled]: () => false,
+    [addContact.rejected]: () => false,
+    [deleteContact.pending]: () => true,
+    [deleteContact.fulfilled]: () => false,
+    [deleteContact.rejected]: () => false,
+});
+
+const onError = createReducer('', {
+    [getContacts.rejected]: () => 'Something went wrong, try again later',
+    [getContacts.pending]: () => '',
+    [addContact.rejected]: () => 'Something went wrong, try again later',
+    [addContact.pending]: () => '',
+    [deleteContact.rejected]: () => 'Something went wrong, try again later',
+    [deleteContact.pending]: () => '',
+});
+
 export default combineReducers({
     items,
     filter,
+    isLoading,
+    onError,
 });

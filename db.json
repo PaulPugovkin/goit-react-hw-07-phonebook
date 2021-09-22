@@ -1,3 +1,9 @@
 {
-  "contacts": []
+  "contacts": [
+    {
+      "id": "54d84483-9d75-4f1a-ac41-5876a8ced2a1",
+      "name": "Dima",
+      "number": "123132132132"
+    }
+  ]
 }
